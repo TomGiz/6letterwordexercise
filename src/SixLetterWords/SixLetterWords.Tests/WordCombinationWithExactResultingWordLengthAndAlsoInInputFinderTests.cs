@@ -14,14 +14,13 @@ namespace SixLetterWords.Tests {
     [Fact]
     public void Can_combine() {
       var sut = new WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder(6);
-      var words = new [] {"fo", "obar", "foobar"};
+      var words = new [] {"fo", "obar", "foobar", "rhu", "barb"};
       var result = sut.FindAllCombinations(
         words.Select(w => new InputWord(w)).ToList());
       Assert.NotNull(result);
-      Assert.Equal(2, result.Count);
+      Assert.Equal(1, result.Count);
       Assert.True(result.All(w => w.Length==6));
       Assert.Contains(result, w => w.Value == "foobar");
-      Assert.Contains(result, w => w.Value == "obarfo");
     }
 
   }

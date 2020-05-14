@@ -1,5 +1,5 @@
 ﻿namespace SixLetterWords.IO {
   public interface IInputWordsRepository {
-    string[] GetAll();
+    InputWord[] GetAll();
   }
 }

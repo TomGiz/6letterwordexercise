@@ -6,9 +6,10 @@ namespace SixLetterWords {
   class WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder : WordCombinationWithExactResultingWordLengthFinder {
 
     public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
+      var wordsWithDesiredLength = inputWords.Where(w => w.Length == this.CombinationLength).ToArray();
       return base
         .FindAllCombinations(inputWords)
-        .Where(w => w.Length == this.CombinationLength)
+        .Where(w => wordsWithDesiredLength.Contains(w))
         .ToList();
     }
 

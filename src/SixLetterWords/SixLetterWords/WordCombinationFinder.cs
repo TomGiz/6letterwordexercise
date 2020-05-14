@@ -6,7 +6,7 @@ namespace SixLetterWords {
     public int CombinationLength { get; }
 
     public IList<InputWord> FindAllCombinations(IEnumerable< InputWord> inputWords) {
-      return new List<InputWord>();
+      return new List<InputWord>(inputWords);
     }
 
     public WordCombinationFinder(int combinationLength) {

@@ -17,6 +17,7 @@ namespace SixLetterWords.Tests {
       var words = new [] {"fo", "obar"};
       var result = sut.FindAllCombinations(words.Select(w => new InputWord(w)));
       Assert.NotNull(result);
+      Assert.Equal(2, result.Count);
     }
   }
 }

@@ -13,4 +13,18 @@ namespace SixLetterWords.IO
       return words.Select(s=>new InputWord(s)).ToArray();
     }
   }
+
+  class DistinctInputWordsRepository : IInputWordsRepository {
+    
+    private readonly IInputWordsRepository _inner;
+
+    public DistinctInputWordsRepository(IInputWordsRepository inner) {
+      _inner = inner;
+    }
+
+    public InputWord[] GetAll() {
+      return _inner.GetAll().Distinct().ToArray();
+    }
+
+  }
 }

@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputWordsRepository.cs" />
+    <Compile Include="IInputWordsFromTxtFileConfiguration.cs" />
+    <Compile Include="InputWordsFromTxtFileConfiguration.cs" />
+    <Compile Include="InputWordsFromTxtFileRepository.cs" />
+    <Compile Include="IInputWordsRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

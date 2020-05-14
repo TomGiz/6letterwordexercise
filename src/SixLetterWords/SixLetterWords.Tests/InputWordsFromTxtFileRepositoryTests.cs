@@ -11,7 +11,7 @@ namespace SixLetterWords.Tests
 
       [Fact]
       public void Can_read_all_words() {
-        var sut =  new InputWordsFromTxtFileRepository(new InputWordsFromTxtFileConfiguration());
+        var sut =  new InputWordsFromTxtFileRepository(new InputWordsFromTxtFileConfiguration("input.txt"));
 
         var words = sut.GetAll();
 

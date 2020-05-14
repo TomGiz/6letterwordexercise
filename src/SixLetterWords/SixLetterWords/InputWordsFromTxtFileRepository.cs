@@ -1,9 +1,5 @@
-﻿namespace SixLetterWords {
-
-  public class InputWordsFromTxtFileConfiguration {
-    public string FilePath  => "input.txt";
-  }
-
+﻿namespace SixLetterWords
+{
   class InputWordsFromTxtFileRepository : IInputWordsRepository{
     private readonly InputWordsFromTxtFileConfiguration _config;
 
@@ -14,9 +10,5 @@
       var words = System.IO.File.ReadAllLines(_config.FilePath);
       return words;
     }
-  }
-
-  public interface IInputWordsRepository {
-    string[] GetAll();
   }
 }

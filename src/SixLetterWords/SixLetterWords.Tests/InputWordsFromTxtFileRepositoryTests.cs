@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using SixLetterWords.IO;
+using Xunit;
 
 namespace SixLetterWords.Tests
 {

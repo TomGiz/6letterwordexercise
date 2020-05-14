@@ -1,4 +1,4 @@
-﻿namespace SixLetterWords
+﻿namespace SixLetterWords.IO
 {
   class InputWordsFromTxtFileRepository : IInputWordsRepository{
     private readonly InputWordsFromTxtFileConfiguration _config;

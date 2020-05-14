@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputWord.cs" />
-    <Compile Include="WordCombination.cs" />
+    <Compile Include="WordCombinationFinder.cs" />
     <Compile Include="IO\IInputWordsFromTxtFileConfiguration.cs" />
     <Compile Include="IO\InputWordsFromTxtFileConfiguration.cs" />
     <Compile Include="IO\InputWordsFromTxtFileRepository.cs" />

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace SixLetterWords {
-  class InputWord : IEquatable<InputWord> {
+  public class InputWord : IEquatable<InputWord> {
 
     public string Value { get; }
 

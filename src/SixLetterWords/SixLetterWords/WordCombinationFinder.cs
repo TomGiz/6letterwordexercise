@@ -1,25 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace SixLetterWords {
-  class WordCombinationFinder : IWordCombinationFinder {
+
+
+  class WordCombinationWithExactResultingWordLengthFinder : WordCombinationFinder {
     public int CombinationLength { get; }
 
-    public IList<InputWord> FindAllCombinations(IEnumerable< InputWord> inputWords) {
-      return new List<InputWord>(inputWords);
+    public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
+      return base
+        .FindAllCombinations(inputWords)
+        .Where(w => w.Length == this.CombinationLength)
+        .ToList();
     }
 
-    public WordCombinationFinder(int combinationLength) {
+    public WordCombinationWithExactResultingWordLengthFinder(int combinationLength) {
       CombinationLength = combinationLength;
     }
+  }
 
-    
+  class WordCombinationFinder : IWordCombinationFinder {
 
+    public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
+      var result = new List<InputWord>();
+      for (int i = 0; i < inputWords.Count(); i++) {
+        for (int j = 0; j < inputWords.Count(); j++) {
+          if (i == j) continue;
+          result.Add(inputWords[i] + inputWords[j]);
+        }
+      }
+
+      return result;
+    }
   }
 
   public interface IWordCombinationFinder {
-    int CombinationLength { get; }
-
-    IList<InputWord> FindAllCombinations(IEnumerable< InputWord> inputWords);
+    IList<InputWord> FindAllCombinations(IList< InputWord> inputWords);
   }
 }

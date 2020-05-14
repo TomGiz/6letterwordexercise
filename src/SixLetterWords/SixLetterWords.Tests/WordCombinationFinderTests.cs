@@ -5,19 +5,24 @@ namespace SixLetterWords.Tests {
   public class WordCombinationFinderTests {
 
     [Fact]
-    public void Can_create_read_back_length() {
-      var sut = new WordCombinationFinder(18);
+    public void Can_create() {
+      var sut = new WordCombinationFinder();
       Assert.NotNull(sut);
-      Assert.Equal(18, sut.CombinationLength);
     }
 
+    
     [Fact]
     public void Can_combine() {
-      var sut = new WordCombinationFinder(6);
-      var words = new [] {"fo", "obar"};
-      var result = sut.FindAllCombinations(words.Select(w => new InputWord(w)));
+      var sut = new WordCombinationFinder();
+      var words = new [] {"fo", "obar", "sun", "shine"};
+      var result = sut.FindAllCombinations(
+        words.Select(w => new InputWord(w)).ToList());
       Assert.NotNull(result);
-      Assert.Equal(2, result.Count);
+      Assert.Equal(12, result.Count);
+      Assert.Contains(result, w => w.Value == "foobar");
+      Assert.Contains(result, w => w.Value == "obarfo");
+      Assert.Contains(result, w => w.Value == "sunshine");
+      Assert.Contains(result, w => w.Value == "sunfo");
     }
   }
 }

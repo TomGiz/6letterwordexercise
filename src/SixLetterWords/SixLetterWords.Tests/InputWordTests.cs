@@ -20,5 +20,17 @@ namespace SixLetterWords.Tests {
       Assert.Equal(expected, w1.Equals(w2));
       Assert.Equal(expected, w1 == w2);
     }
+
+    [Theory]
+    [InlineData("abc", "def", "abcdef")]
+    [InlineData("xyz", null, "xyz")]
+    public void Can_add(string v1, string v2, string expected) {
+      var w1 = new InputWord(v1);
+      var w2 = new InputWord(v2);
+
+      var result = w1 + w2;
+
+      Assert.Equal(expected, result.Value);
+    }
   }
 }

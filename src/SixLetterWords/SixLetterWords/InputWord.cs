@@ -53,5 +53,11 @@ namespace SixLetterWords {
     public static bool operator !=(InputWord obj1, InputWord obj2) {
       return !(obj1 == obj2);
     }
+
+    public static InputWord operator +(InputWord obj1, InputWord obj2) {
+      if (obj1 == null) return obj2;
+      if (obj2 == null) return obj1;
+      return new InputWord(obj1.Value + obj2.Value);
+    }
   }
 }

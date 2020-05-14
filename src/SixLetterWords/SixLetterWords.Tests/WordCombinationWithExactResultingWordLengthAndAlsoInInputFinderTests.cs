@@ -6,14 +6,14 @@ namespace SixLetterWords.Tests {
 
     [Fact]
     public void Can_create_read_back_length() {
-      var sut = new WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder(18);
+      var sut = new WordCombinationPairWithExactResultingWordLengthAndAlsoInInputFinder(18);
       Assert.NotNull(sut);
       Assert.Equal(18, sut.CombinationLength);
     }
 
     [Fact]
     public void Can_combine() {
-      var sut = new WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder(6);
+      var sut = new WordCombinationPairWithExactResultingWordLengthAndAlsoInInputFinder(6);
       var words = new [] {"fo", "obar", "foobar", "rhu", "barb"};
       var result = sut.FindAllCombinations(
         words.Select(w => new InputWord(w)).ToList());

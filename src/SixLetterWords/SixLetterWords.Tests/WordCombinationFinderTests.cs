@@ -6,14 +6,14 @@ namespace SixLetterWords.Tests {
 
     [Fact]
     public void Can_create() {
-      var sut = new WordCombinationFinder();
+      var sut = new WordCombinationPairFinder();
       Assert.NotNull(sut);
     }
 
     
     [Fact]
     public void Can_combine() {
-      var sut = new WordCombinationFinder();
+      var sut = new WordCombinationPairFinder();
       var words = new [] {"fo", "obar", "sun", "shine"};
       var result = sut.FindAllCombinations(
         words.Select(w => new InputWord(w)).ToList());

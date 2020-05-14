@@ -55,5 +55,8 @@ namespace SixLetterWords
       return !(obj1 == obj2);
     }
 
+    public static Word operator +(Word obj1, Word obj2) {
+      return new Word(obj1.Value+obj2.Value);
+    }
   }
 }

@@ -16,4 +16,15 @@ namespace SixLetterWords {
       return result;
     }
   }
+
+  class WordCombinationTupleWithExactResultingWordLenthAndAlsoInInputFinder : IWordCombinationFinder {
+    private readonly int _combinationLength;
+
+    public WordCombinationTupleWithExactResultingWordLenthAndAlsoInInputFinder(int combinationLength) {
+      _combinationLength = combinationLength;
+    }
+    public IList<WordCombination> FindAllCombinations(IList<InputWord> inputWords) {
+      return null;
+    }
+  }
 }

@@ -14,7 +14,7 @@ namespace SixLetterWords {
           new InputWordsFromTxtFileConfiguration(inputTxt)));
       var inputWords = reader.GetAll();
 
-      var combiner = new WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder(combinationLength);
+      var combiner = new WordCombinationPairWithExactResultingWordLengthAndAlsoInInputFinder(combinationLength);
       var result = combiner.FindAllCombinations(inputWords.ToList());
 
       foreach (var word in result)

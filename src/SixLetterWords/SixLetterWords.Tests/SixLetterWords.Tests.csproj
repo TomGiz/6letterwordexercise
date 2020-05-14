@@ -73,6 +73,7 @@
     <Compile Include="InputWordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordCombinationFinderTests.cs" />
+    <Compile Include="WordCombinationTests.cs" />
     <Compile Include="WordCombinationWithExactResultingWordLengthAndAlsoInInputFinderTests.cs" />
     <Compile Include="WordCombinationWithExactResultingWordLengthFinderTests.cs" />
   </ItemGroup>

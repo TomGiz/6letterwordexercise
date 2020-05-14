@@ -2,7 +2,7 @@
 using System.Linq;
 
 namespace SixLetterWords {
-  class WordCombinationFinder : IWordCombinationFinder {
+  class WordCombinationPairFinder : IWordCombinationFinder {
 
     public IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords) {
       var result = new List<WordCombination>();

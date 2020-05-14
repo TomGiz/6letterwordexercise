@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SixLetterWords
 {
-  class WordCombinationWithExactResultingWordLengthFinder : WordCombinationFinder {
+  class WordCombinationPairWithExactResultingWordLengthFinder : WordCombinationPairFinder {
     public int CombinationLength { get; }
 
     public IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords) {
@@ -13,7 +13,7 @@ namespace SixLetterWords
         .ToList();
     }
 
-    public WordCombinationWithExactResultingWordLengthFinder(int combinationLength) {
+    public WordCombinationPairWithExactResultingWordLengthFinder(int combinationLength) {
       CombinationLength = combinationLength;
     }
   }

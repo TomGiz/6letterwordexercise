@@ -18,7 +18,7 @@ namespace SixLetterWords.Tests {
       var w1 = new InputWord(v1);
       var w2 = new InputWord(v2);
       Assert.Equal(expected, w1.Equals(w2));
-      //Assert.Equal(expected, w1==w2);
+      Assert.Equal(expected, w1 == w2);
     }
   }
 }

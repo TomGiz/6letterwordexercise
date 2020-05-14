@@ -2,14 +2,13 @@
 using System.Linq;
 
 namespace SixLetterWords {
-  
   class WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder : WordCombinationWithExactResultingWordLengthFinder {
 
-    public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
+    public IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords) {
       var wordsWithDesiredLength = inputWords.Where(w => w.Length == this.CombinationLength).ToArray();
       return base
         .FindAllCombinations(inputWords)
-        .Where(w => wordsWithDesiredLength.Contains(w))
+        .Where(w => wordsWithDesiredLength.Any(s=>s.Value==w.Value))
         .ToList();
     }
 
@@ -21,7 +20,7 @@ namespace SixLetterWords {
   class WordCombinationWithExactResultingWordLengthFinder : WordCombinationFinder {
     public int CombinationLength { get; }
 
-    public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
+    public IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords) {
       return base
         .FindAllCombinations(inputWords)
         .Where(w => w.Length == this.CombinationLength)
@@ -35,12 +34,12 @@ namespace SixLetterWords {
 
   class WordCombinationFinder : IWordCombinationFinder {
 
-    public IList<InputWord> FindAllCombinations(IList< InputWord> inputWords) {
-      var result = new List<InputWord>();
+    public IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords) {
+      var result = new List<WordCombination>();
       for (int i = 0; i < inputWords.Count(); i++) {
         for (int j = 0; j < inputWords.Count(); j++) {
           if (i == j) continue;
-          result.Add(inputWords[i] + inputWords[j]);
+          result.Add(new WordCombination( inputWords[i],inputWords[j]));
         }
       }
 
@@ -49,6 +48,6 @@ namespace SixLetterWords {
   }
 
   public interface IWordCombinationFinder {
-    IList<InputWord> FindAllCombinations(IList< InputWord> inputWords);
+    IList<WordCombination> FindAllCombinations(IList< InputWord> inputWords);
   }
 }

@@ -1,3 +1,5 @@
+**Cloned from [https://bitbucket.org/behindthebuttons/6letterwordexercise/](https://bitbucket.org/behindthebuttons/6letterwordexercise/)**
+
 # 6 letter words
 There's a file in the root of the repository, input.txt, that contains words of varying lengths (1 to 6 characters).
 

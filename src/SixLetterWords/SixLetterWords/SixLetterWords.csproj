@@ -43,16 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputWord.cs" />
+    <Compile Include="IO\InputWord.cs" />
     <Compile Include="Word.cs" />
-    <Compile Include="WordCombination.cs" />
-    <Compile Include="WordCombinationFinder.cs" />
+    <Compile Include="WordCombinations\IWordCombinationFinder.cs" />
+    <Compile Include="WordCombinations\WordCombination.cs" />
+    <Compile Include="WordCombinations\WordCombinationFinder.cs" />
     <Compile Include="IO\IInputWordsFromTxtFileConfiguration.cs" />
     <Compile Include="IO\InputWordsFromTxtFileConfiguration.cs" />
     <Compile Include="IO\InputWordsFromTxtFileRepository.cs" />
     <Compile Include="IO\IInputWordsRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordCombinations\WordCombinationWithExactResultingWordLengthAndAlsoInInputFinder.cs" />
+    <Compile Include="WordCombinations\WordCombinationWithExactResultingWordLengthFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

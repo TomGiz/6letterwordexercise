@@ -1,0 +1,4 @@
+﻿namespace SixLetterWords {
+  class InputWordsRepository {
+  }
+}

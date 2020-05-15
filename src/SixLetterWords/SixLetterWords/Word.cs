@@ -9,6 +9,10 @@ namespace SixLetterWords
     public Word(string value) {
       Value = value;
     }
+
+    public Word(Word other) {
+      Value = other.Value;
+    }
     
     public int Length => Value.Length;
 
@@ -55,8 +59,5 @@ namespace SixLetterWords
       return !(obj1 == obj2);
     }
 
-    public static Word operator +(Word obj1, Word obj2) {
-      return new Word(obj1.Value+obj2.Value);
-    }
   }
 }

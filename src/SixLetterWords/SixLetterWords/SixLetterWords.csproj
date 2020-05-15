@@ -47,6 +47,7 @@
     <Compile Include="Word.cs" />
     <Compile Include="WordCombinations\IWordCombinationFinder.cs" />
     <Compile Include="WordCombinations\WordCombination.cs" />
+    <Compile Include="WordCombinations\WordCombinationComparer.cs" />
     <Compile Include="WordCombinations\WordCombinationPairFinder.cs" />
     <Compile Include="IO\IInputWordsFromTxtFileConfiguration.cs" />
     <Compile Include="IO\InputWordsFromTxtFileConfiguration.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordCombinations\WordCombinationPairWithExactResultingWordLengthAndAlsoInInputFinder.cs" />
     <Compile Include="WordCombinations\WordCombinationPairWithExactResultingWordLengthFinder.cs" />
+    <Compile Include="WordCombinations\WordCombinationTupleWithExactResultingWordLenthAndAlsoInInputFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

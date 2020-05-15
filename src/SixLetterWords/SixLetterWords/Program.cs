@@ -14,7 +14,7 @@ namespace SixLetterWords {
           new InputWordsFromTxtFileConfiguration(inputTxt)));
       var inputWords = reader.GetAll();
 
-      var combiner = new WordCombinationPairWithExactResultingWordLengthAndAlsoInInputFinder(combinationLength);
+      var combiner = new WordCombinationTupleWithExactResultingWordLenthAndAlsoInInputFinder(combinationLength);
       var result = combiner.FindAllCombinations(inputWords.ToList());
 
       foreach (var word in result)
@@ -25,7 +25,9 @@ namespace SixLetterWords {
       Console.WriteLine();
       Console.WriteLine($"Found {result.Count} unique word combinations of length {combinationLength}");
 
-      Console.ReadKey();
+      if (System.Diagnostics.Debugger.IsAttached) {
+        Console.ReadKey();
+      }
     }
   }
 }
